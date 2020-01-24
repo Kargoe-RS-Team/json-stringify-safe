@@ -2,7 +2,7 @@ exports = module.exports = stringify
 exports.getSerialize = serializer
 
 function stringify(obj, replacer, spaces, cycleReplacer) {
-  if (JSON.origStringify) return JSON.stringify(obj, serializer(replacer, cycleReplacer), spaces)
+  if (JSON.origStringify) return JSON.origStringify(obj, serializer(replacer, cycleReplacer), spaces)
   else return JSON.stringify(obj, serializer(replacer, cycleReplacer), spaces)
 }
 
